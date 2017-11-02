@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>tizen40</TargetFramework>
+    <RootNamespace>Plugin.Settings</RootNamespace>
+    <AssemblyName>Plugin.Settings</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.1.0" PrivateAssets="All" />
+    <PackageReference Include="Tizen.NET" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin.Settings.Abstractions\Plugin.Settings.Abstractions.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\Plugin.Settings.Shared\Plugin.Settings.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+</Project>

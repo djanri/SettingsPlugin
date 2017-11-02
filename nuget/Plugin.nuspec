@@ -13,18 +13,15 @@
     <description>
       Settings Plugin for Xamarin and Windows provides a consistent, cross platform settings/preferences plugin.
 
+      Support for: Int, Int64, Double, String, DateTime, Bool, Float, Decimal, Guid
+      
       This makes it easier to create cross-platform .NET apps and have cross platform settings.
       Manage and use all settings from one PCL/NetStandard library and save natively on each platform.
 
-      **This plugin stores settings natively on each platform and does NOT save them to Json.
-      This allows you to use native functionality such as PreferenceActivity on Android.
-
-      Support for: Int, Int64, Double, String, DateTime, Bool, Float, Decimal, Guid
-
       You can always serialize and deserialize a string out if needed.**
     </description>
-    <summary>Cross platform settings for Xamarin.iOS, Xamarin.Android, Xamarin.Mac, Xamarin.Forms, and Windows</summary>
-    <tags>xamarin, settings, preferences, nsuserdefaults, pcl, xam.pcl, plugin for xamarin, plugin, settings, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios, monoandroid, monodroid, monotouch, mvvmcross</tags>
+    <summary>Cross platform settings for Xamarin.iOS, Xamarin.Android, Xamarin.Mac, Xamarin.Forms, Tizen.NET and Windows</summary>
+    <tags>xamarin, settings, preferences, nsuserdefaults, pcl, xam.pcl, plugin for xamarin, plugin, settings, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios, monoandroid, monodroid, monotouch, tizen.net, mvvmcross</tags>
     <dependencies>
       <group targetFramework="net">
       </group>
@@ -53,13 +50,13 @@
       </group>
       <group targetFramework="xamarinwatchos">
       </group>
+      <group targetFramework="Tizen30">
+      </group>
     </dependencies>
     <releaseNotes>
       See Changelog: https://github.com/jamesmontemagno/SettingsPlugin/blob/master/CHANGELOG.md
     </releaseNotes>
-
   </metadata>
-
   <files>
     <file src="nuget\readme.txt" target="readme.txt"/>
 
@@ -94,7 +91,10 @@
     <!--Xamarin.watchOS -->
     <file src="src\Plugin.Settings.watchOS\bin\Release\Plugin.Settings.*" target="lib\xamarinwatchOS" />
     <file src="files\SettingsPlatform.cs.pp" target="content\xamarinwatchOS\Helpers\Settings.cs.pp" />
-
+    
+    <!-- Tizen.NET Support -->
+    <file src="src\Plugin.Settings.Tizen\bin\Release\Plugin.Settings.*" target="lib\tizen30\Plugin.Settings.dll" />
+    <file src="files\SettingsPlatform.cs.pp" target="content\tizen30\Helpers\Settings.cs.pp" />
 
   </files>
 </package>
